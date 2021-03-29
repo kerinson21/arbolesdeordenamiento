@@ -159,6 +159,25 @@ namespace ConsoleApp2
             pausa = 0;
 
         }
+        
+         public static void ordenNombre()
+        {
+            ArbolBinarioBusqueda ArBus = new ArbolBinarioBusqueda();
+            List<Estudiante> estudiantes = new List<Estudiante>();
+            estudiantes.Add(new Estudiante(26309, "Kerinson"));
+            estudiantes.Add(new Estudiante(45623, "Winiverto"));
+            estudiantes.Add(new Estudiante(45832, "Carrillo"));
+            estudiantes.Add(new Estudiante(12432, "Lenin"));
+            estudiantes = estudiantes.OrderBy(x => x.nombre).ToList();
+            foreach(Estudiante estudiante in estudiantes)
+            {
+                Console.WriteLine($"Carnet: {estudiante.numMat}  Nombre: {estudiante.nombre}");
+                
+            }
+
+            Console.ReadLine();
+        }
+
        
 
 
@@ -168,8 +187,8 @@ namespace ConsoleApp2
             // prueba_arbol_normal();
             // juegoAnimales();
             //pruebaOrden();
-            ordenCarnet();
-
+            //ordenCarnet();
+            ordenNombre();
 
         }
     }
